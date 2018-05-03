@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.puma.test.Logintest"/>
+      <class name="com.puma.test.Productdescriptiontest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
