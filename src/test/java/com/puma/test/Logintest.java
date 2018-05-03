@@ -19,7 +19,7 @@ public class Logintest extends Basetest
 	{
 		Loginpage l1=new Loginpage(driver);
 		l1.mousehover();
-		
+		l1.comparision();
 		
 	}
 

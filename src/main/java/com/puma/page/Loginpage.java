@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
+import org.testng.Reporter;
 
 import com.puma.generic.Basepage;
 
@@ -17,12 +19,14 @@ public class Loginpage extends Basepage
 	private WebElement runningoption;
 	@FindBy(id="product-collection-image-71792")
 	private WebElement shoesoption2;
-	@FindBy(xpath="//span[@class='caret']")
+	@FindBy(xpath="//div[@class='product-size-click-btn']")
 	private WebElement Size;
-	@FindBy(xpath="//span[@id='180~229']")
+	@FindBy(xpath="(//span[@class='swatch-label2'])[2]")
 	private WebElement sizenum;
-	@FindBy(xpath="//button[@title='Add to Cart']")
-	private WebElement addtocart;
+	@FindBy(xpath="(//span[.='Add to Cart'])[1]")
+	private WebElement addtocart;  
+	@FindBy(xpath="//select[@name='cart[992399][qty]']//option[@value='1']")
+	private WebElement comSize; 
 	
 	//Intialization
 	public Loginpage(WebDriver driver) 
@@ -43,6 +47,14 @@ public class Loginpage extends Basepage
 		Size.click();
 		sizenum.click();
 		addtocart.click();
+	
+		
+	}
+	public void comparision()
+	{
+		String actual = "1";
+		String expected=comSize.getText();
+		Assert.assertEquals(actual, expected);
 		
 		
 	}
